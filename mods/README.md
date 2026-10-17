@@ -338,37 +338,6 @@ adding to an existing game, and `MODE` when you are creating one.
 Open **Settings → Diagnostics → Run content check**. It verifies that every
 chapter, quest, enemy, spawn, drop, status and element your mod refers to
 actually exists and can be reached — the errors that otherwise show up as a
-chapter you cannot finish. The same check is available as
-`tools/validate-content.js` and `Game.validateContent()`.
+chapter you cannot finish. The same check runs in Node with
+`node js/validate.js`, and is exposed as `Game.validateContent()`.
 
-## Restricting a mod to one game
-
-If your mod belongs to one campaign only, say so — otherwise its chapters and
-quests are loaded into **both** games and the two stories run into each other.
-
-```js
-window.AETHELGARD_MODS.push({
-  id: "my-expansion",
-  name: "My Expansion",
-  mode: "chronicles",        // only load in Chronicles
-  // ... rest of the mod
-});
-```
-
-| value | meaning |
-|---|---|
-| `"chronicles"` | the hero campaign only |
-| `"villain"` | The Crown's Shadow only |
-| omitted | loads in every game — correct for generic content like new enemies, items or art |
-
-Declaring a whole `MODE` is different: that *creates* a new game, and the mod's
-content is then only applied while that game is active. Use `mode` when you are
-adding to an existing game, and `MODE` when you are creating one.
-
-## Checking your mod
-
-Open **Settings → Diagnostics → Run content check**. It verifies that every
-chapter, quest, enemy, spawn, drop, status and element your mod refers to
-actually exists and can be reached — the errors that otherwise show up as a
-chapter you cannot finish. The same check is available as
-`tools/validate-content.js` and `Game.validateContent()`.

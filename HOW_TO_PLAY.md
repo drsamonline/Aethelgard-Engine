@@ -1,4 +1,16 @@
-# How to play Aethelgard
+# 📖 How to Play — Aethelgard: Chronicles of Fate
+
+*A game by Dr. Sohil Momin* · [Live game → aethelgardplay.netlify.app](https://aethelgardplay.netlify.app/)
+
+## Table of contents
+
+- [Getting it running — read this first](#getting-it-running--read-this-first)
+- [Getting started](#getting-started) · [The basics](#the-basics) · [Combat](#combat) · [Progression](#progression)
+- [The Atlas](#the-atlas) · [Quests](#quests) · [Home, Forge & Market](#home-forge--market) · [Activities](#activities-beyond-fighting)
+- [The Underworld](#the-underworld) · [The endgame](#the-endgame) · [Hints and shortcuts](#hints-and-shortcuts)
+- [Learning the game](#learning-the-game) · [Mods](#mods) · [Settings](#settings) · [Saving](#saving)
+
+---
 
 ## Getting it running — read this first
 
@@ -15,12 +27,6 @@ instructions.
 
 If you have played before and it looks stuck on an old version, do a **hard refresh**
 (Ctrl+F5, or Cmd+Shift+R on Mac). The game updates its own cache automatically from then on.
-
----
-
-# How to Play — Aethelgard: Chronicles of Fate
-
-*A game by Dr. Sohil Momin*
 
 ---
 
@@ -100,7 +106,7 @@ Crime runs on **Nerve**, and success scales with Stealth, Finesse and class:
 
 ## The endgame
 
-Finish the five chapters to unlock the **Open World**. Then chase **38 achievements**, the statistics page, and **Ascend** (New Game+) for permanent power — +1 to every attribute and bonus points per rank.
+Finish the five chapters to unlock the **Open World**. Then chase **39 achievements**, the statistics page, and **Ascend** (New Game+) for permanent power — +1 to every attribute and bonus points per rank.
 
 ## Hints and shortcuts
 
@@ -110,7 +116,7 @@ Finish the five chapters to unlock the **Open World**. Then chase **38 achieveme
 ## Learning the game
 
 - **Hover almost anything** — stats, items, enemies, skills, buttons — for a wiki explanation. (Toggle tooltips in Settings.)
-- The **Wiki tab** has ~200 searchable entries covering every mechanic and object.
+- The **Wiki tab** has a searchable catalogue covering every mechanic and object — 80+ hand-written entries plus auto-generated pages for every enemy, item and skill in the game (including mod content).
 - The **bell** in the header holds your notification history for every event, quest and unlock.
 - The **Codex** tracks achievements and statistics.
 
@@ -123,18 +129,24 @@ The game looks for add-ons in the `mods/` folder automatically. Any it finds app
 - **Compatibility**: the Mods panel tells you which mods work together (✓), which overlap (⚠) and which cannot load (✗, with the reason). A broken mod is skipped so the game still runs.
 - **Safe mode** (in Settings, or add `?safe=1` to the address) runs the game with no mods at all.
 
-**Graphics packs** are mods that ship images. The game draws all its art through one function, so a pack can replace the emoji with sprites without any engine changes. Two packs ship with the game — **Flat Icons** (simple PNG icons) and **Chronicles Vector** (102 illustrated SVG models) — choose one in **Settings → Graphics pack**. Anything a pack doesn't cover keeps its emoji.
+**Graphics packs** are mods that ship images. The game draws all its art through one function, so a pack can replace the emoji with sprites without any engine changes. Two packs ship with the game — **Flat Icons** (59 PNG pictograms) and **Chronicles Vector** (102 illustrated SVG models) — choose one in **Settings → Graphics pack**. Anything a pack doesn't cover keeps its emoji.
 
-To add a mod, drop its `.js` file (or a folder with a `mod.js`) into `mods/`, run `python3 tools/build-mods-index.py`, and reload. Full instructions and the file format are in **mods/README.md**.
+To add a mod, drop its `.js` file (or a folder with a `mod.js`) into `mods/`, run `python3 tools/build-mods-index.py`, and reload. Full instructions and the file format are in **[mods/README.md](mods/README.md)**.
 
 ## Settings
 
-Theme (Dark, Midnight Blue, Parchment, High Contrast), difficulty, text size, sound and volume, tooltips, notifications, damage numbers, screen shake, autosave, reduced motion, compact layout, and colourblind mode.
+Theme (**Dark**, **Midnight Blue**, **Parchment**, **High Contrast**), difficulty, text size, sound and volume, music and volume, tooltips, notifications, damage numbers, screen shake, autosave, auto-battle, reduced motion, compact layout, colourblind mode, dyslexia-friendly font and high-contrast colours.
 
 ## Saving
 
-Progress auto-saves to its slot. **Menu → Export Save** copies a backup string; **Import Save** restores it on another device.
+Progress **auto-saves** to its slot every few seconds and after every significant action. There is no separate checkpoint system — the save *is* your live state.
+
+- **Menu & Save → Export** downloads a real `.json` save file; **Import** reads one back.
+- On the title screen you can also export/import directly from each slot.
+- Saves live in your browser's `localStorage`: they do not follow you between browsers or devices, and private windows clear them. Keep an exported file as a backup.
 
 ---
 
 *Tips: keep energy in reserve; sell materials when prices peak; Defend when you see ⚠️; match your element to the enemy's weakness; and grow your settlement early for a steady income.*
+
+**Enjoying the game?** Star the repo ⭐ and play the live build at [aethelgardplay.netlify.app](https://aethelgardplay.netlify.app/).

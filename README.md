@@ -108,7 +108,7 @@ js/data/              Pure data — safe to edit or extend
   gamedata.js           elements, statuses, rarities, affixes, difficulty, items, buildings, locations
   races.js              8 playable races + genders
   classes.js            8 classes, their skills, and their mission lines
-  enemies.js            ~40 enemies and bosses
+  enemies.js            the bestiary — 20 core enemies and world bosses (mods add more)
   gear.js               weapons, armour, offhand, rings, amulets + recipes
   quests.js             the 5 branching story chapters, 16 side quests, bounties
   events.js             travel events + spontaneous in-game events
@@ -116,7 +116,7 @@ js/data/              Pure data — safe to edit or extend
   achievements.js       39 achievements
   companions.js         recruitable allies
   gems.js / music.js / reactions.js   gem upgrades, soundtrack data, combat quips
-  wiki.js               ~200 wiki entries (built from the data above)
+  wiki.js               80+ hand-written wiki entries, extended automatically from the data above
   i18n.js               English interface strings (mod-extensible key table)
 
 js/                   Logic
@@ -162,7 +162,7 @@ tools/                Static audit, end-to-end verifier, twelve simulations, art
 ### ⚔️ Combat
 - Turn-based, one *or several* enemies, tap to target.
 - Four attributes; crits, defence, lifesteal, double strikes.
-- Six elements and enemies with resistances and weaknesses.
+- Six elements, and a bestiary of 20 core enemies and world bosses with resistances and weaknesses.
 - Status effects: bleed, poison, burn, stun, weaken, ward, rage, regen, focus, mark.
 - Telegraphed enemy attacks, so Defend matters.
 - Active skills across the classes, with cooldowns and energy costs.
@@ -197,7 +197,7 @@ tools/                Static audit, end-to-end verifier, twelve simulations, art
 
 ### 🏆 Meta
 - **Notifications** for events, quests, unlocks, upgrades and achievements, with a bell and a history panel.
-- **Hover tooltips** on nearly everything, and a searchable **Wiki** tab (both toggleable).
+- **Hover tooltips** on nearly everything, and a searchable **Wiki** tab with 80+ hand-written entries plus auto-generated pages for every enemy, item and skill (both toggleable).
 - **39 achievements**, a statistics page, and Ascension (New Game+).
 - 3 save slots, export/import, and autosave.
 - A contextual **Hints** panel that reads your situation and tells you what to do next.
@@ -229,6 +229,7 @@ node --check js/core.js            # any single file
 node test6.js && node test7.js && node test8.js   # unit suites
 node tools/verify.js               # end-to-end: tabs, actions, combat, save, both campaigns
 node tools/sims.js 1 12            # the twelve gameplay simulations
+node js/validate.js                # content validator — or in-game: Settings → Diagnostics → Run content check
 python3 tools/static-audit.py .    # functions, dead code, duplicates, wiring (note the dot!)
 ```
 
