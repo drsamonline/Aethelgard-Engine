@@ -4,6 +4,8 @@ A deep, single-player, text-based fantasy RPG for the browser — classes, races
 
 **Created by Dr. Sohil Momin.**
 
+TO PLAY THE GAME GO TO -  https://aethelgardplay.netlify.app/
+
 ---
 
 ## Game modes
