@@ -1,0 +1,15 @@
+/* ============================================================
+   Aethelgard - MOD MANIFEST (auto-generated)
+   Regenerate with:  python3 tools/build-mods-index.py
+   ============================================================ */
+window.AETHELGARD_MOD_FILES = [
+  "ai-art/mod.js",
+  "example-addon.js",
+  "example-class.js",
+  "example-graphics/mod.js",
+  "example-mod.js",
+  "example-overhaul.js",
+  "overhaul-vector/mod.js",
+  "story-expansion.js",
+  "villain-arc.js",
+];
