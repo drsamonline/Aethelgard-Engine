@@ -1,0 +1,38 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  syntax-and-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Syntax-check every JS file
+        run: |
+          fail=0
+          for f in $(find js mods tools . -maxdepth 3 -name '*.js' -not -path './.git/*'); do
+            node --check "$f" || { echo "SYNTAX FAIL: $f"; fail=1; }
+          done
+          exit $fail
+
+      - name: Validate JSON files
+        run: |
+          python3 -m json.tool manifest.json > /dev/null
+          python3 -m json.tool mods/mods.json > /dev/null
+
+      - name: Run test suites
+        run: |
+          node test6.js
+          node test7.js
+          node test8.js
+
+      - name: Static audit (repo root)
+        run: python3 tools/static-audit.py .
