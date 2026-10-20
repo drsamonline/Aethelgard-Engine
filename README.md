@@ -8,6 +8,7 @@ Classes, races, a branching story, crafting, settlement building, an underworld 
 Built entirely with vanilla HTML, CSS and JavaScript — **no server, no build step, no dependencies, fully offline.**
 
 [![Play Now](https://img.shields.io/badge/▶_PLAY_NOW-aethelgardplay.netlify.app-8B5CF6?style=for-the-badge&logo=netlify&logoColor=white)](https://aethelgardplay.netlify.app/)
+[![Play on GitHub Pages](https://img.shields.io/badge/▶_PLAY_ON_GITHUB_PAGES-drsamonline.github.io-2EA44F?style=for-the-badge&logo=githubpages&logoColor=white)](https://drsamonline.github.io/aethelgard-games/chronicles/)
 
 [![Version](https://img.shields.io/badge/version-game%20v7%20·%20changelog%201.0.4-blue?style=flat-square)](CHANGELOG.md)
 [![License: MIT](https://img.shields.io/badge/code-MIT-green?style=flat-square)](LICENSE)
@@ -29,7 +30,7 @@ Built entirely with vanilla HTML, CSS and JavaScript — **no server, no build s
 
 ## 🎮 Table of contents
 
-- [Play it](#-play-it) · [Game modes](#-game-modes) · [Story mods](#-two-extra-games-ship-as-mods) · [Languages](#-languages)
+- [Play it](#-play-it) · [Part of Aethelgard](#-part-of-aethelgard) · [Game modes](#-game-modes) · [Story mods](#-two-extra-games-ship-as-mods) · [Languages](#-languages)
 - [What's in this repo](#-whats-in-this-repo) · [File map](#-the-files-are-deliberately-kept-separate)
 - [Features](#-features) · [Modding](#-adding-content-mods) · [Documentation](#-documentation) · [Development & testing](#-development--testing) · [Credits](#-credits)
 
@@ -37,7 +38,12 @@ Built entirely with vanilla HTML, CSS and JavaScript — **no server, no build s
 
 ## ▶️ Play it
 
-**Live game → https://aethelgardplay.netlify.app/**
+**Play it now — both links serve the same build:**
+
+| | host | link |
+|---|---|---|
+| 🟢 | **Netlify** | **https://aethelgardplay.netlify.app/** |
+| ⚡ | **GitHub Pages** | **https://drsamonline.github.io/aethelgard-games/chronicles/** |
 
 Or run it locally:
 
@@ -49,6 +55,21 @@ Or run it locally:
 
 ### 📱 Install as an app (optional)
 When served over `http://` or `https://` (any static host, or `python3 -m http.server`), the game registers a service worker and installs to your home screen with its own icon and full offline support.
+
+---
+
+## 🌍 Part of Aethelgard
+
+This RPG is one of **two games** in the *Aethelgard* world. The other is a visual
+novel built on a separate, equally small engine. Both are free to play, and both
+are served from one place:
+
+| | game | engine | play |
+|---|---|---|---|
+| ⚔️ | **Aethelgard: Chronicles of Fate** — this game | the Aethelgard engine (this repo) | [drsamonline.github.io/aethelgard-games/chronicles](https://drsamonline.github.io/aethelgard-games/chronicles/) |
+| 📖 | **Aethelgard — The Books** — a visual novel | [Saga](https://github.com/drsamonline/AethelgardVN) | [drsamonline.github.io/aethelgard-games/books](https://drsamonline.github.io/aethelgard-games/books/) |
+
+🗂️ Both games live together in **[drsamonline/aethelgard-games](https://github.com/drsamonline/aethelgard-games)**.
 
 ---
 
