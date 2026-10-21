@@ -1,5 +1,27 @@
 <div align="center">
 
+# ⚙️ Aethelgard Engine
+
+**The vanilla-JavaScript engine behind *Aethelgard: Chronicles of Fate* — a deep, single-player, browser RPG.**
+No build step, no dependencies, fully offline: small modules loaded in script order behind one global (`window.Game`).
+
+[![Landing page](https://img.shields.io/badge/▶_LANDING_PAGE-drsamonline.github.io-60a5fa?style=for-the-badge&logo=githubpages&logoColor=white)](https://drsamonline.github.io/Aethelgard-Engine/)
+[![Play the demo](https://img.shields.io/badge/▶_PLAY_THE_DEMO-/play-8B5CF6?style=for-the-badge&logo=github&logoColor=white)](https://drsamonline.github.io/Aethelgard-Engine/play/)
+
+[![License: MIT](https://img.shields.io/badge/code-MIT-green?style=flat-square)](LICENSE)
+[![Art License](https://img.shields.io/badge/art-©_reserved-orange?style=flat-square)](LICENSE-ASSETS.md)
+[![No Dependencies](https://img.shields.io/badge/dependencies-0-brightgreen?style=flat-square)](#play-it)
+[![No Build Step](https://img.shields.io/badge/build_step-none-informational?style=flat-square)](#play-it)
+[![Offline First](https://img.shields.io/badge/offline-first-success?style=flat-square)](#install-as-an-app-optional)
+
+**→ [Landing page](https://drsamonline.github.io/Aethelgard-Engine/)** · **→ [Play the demo](https://drsamonline.github.io/Aethelgard-Engine/play/)**
+
+</div>
+
+---
+
+<div align="center">
+
 # ⚔️ Aethelgard: Chronicles of Fate
 
 **A deep, single-player, text-based fantasy RPG for the browser.**

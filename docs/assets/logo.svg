@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" role="img" aria-label="Aethelgard Engine mark">
+  <rect width="48" height="48" fill="#14161a"/>
+  <rect x="3" y="3" width="42" height="42" fill="none" stroke="#2b3039"/>
+  <path d="M24 8 39 42H9Z" fill="none" stroke="#60a5fa" stroke-width="2.4" stroke-linejoin="miter"/>
+  <path d="M16.5 30.5h15" stroke="#60a5fa" stroke-width="2.4"/>
+  <path d="M12 14h6M30 14h6" stroke="#3b82f6" stroke-width="2.4"/>
+  <circle cx="24" cy="24" r="2.4" fill="#60a5fa"/>
+</svg>
