@@ -30,7 +30,7 @@ Classes, races, a branching story, crafting, settlement building, an underworld 
 Built entirely with vanilla HTML, CSS and JavaScript — **no server, no build step, no dependencies, fully offline.**
 
 [![Play Now](https://img.shields.io/badge/▶_PLAY_NOW-aethelgardplay.netlify.app-8B5CF6?style=for-the-badge&logo=netlify&logoColor=white)](https://aethelgardplay.netlify.app/)
-[![Play on GitHub Pages](https://img.shields.io/badge/▶_PLAY_ON_GITHUB_PAGES-drsamonline.github.io-2EA44F?style=for-the-badge&logo=githubpages&logoColor=white)](https://drsamonline.github.io/aethelgard-games/chronicles/)
+[![Play on GitHub Pages](https://img.shields.io/badge/▶_PLAY_ON_GITHUB_PAGES-drsamonline.github.io-2EA44F?style=for-the-badge&logo=githubpages&logoColor=white)](https://drsamonline.github.io/aethelgard-games/play/chronicles/)
 
 [![Version](https://img.shields.io/badge/version-game%20v7%20·%20changelog%201.0.4-blue?style=flat-square)](CHANGELOG.md)
 [![License: MIT](https://img.shields.io/badge/code-MIT-green?style=flat-square)](LICENSE)
@@ -65,7 +65,7 @@ Built entirely with vanilla HTML, CSS and JavaScript — **no server, no build s
 | | host | link |
 |---|---|---|
 | 🟢 | **Netlify** | **https://aethelgardplay.netlify.app/** |
-| ⚡ | **GitHub Pages** | **https://drsamonline.github.io/aethelgard-games/chronicles/** |
+| ⚡ | **GitHub Pages** | **https://drsamonline.github.io/aethelgard-games/play/chronicles/** |
 
 Or run it locally:
 
@@ -88,8 +88,8 @@ are served from one place:
 
 | | game | engine | play |
 |---|---|---|---|
-| ⚔️ | **Aethelgard: Chronicles of Fate** — this game | the Aethelgard engine (this repo) | [drsamonline.github.io/aethelgard-games/chronicles](https://drsamonline.github.io/aethelgard-games/chronicles/) |
-| 📖 | **Aethelgard — The Books** — a visual novel | [Saga](https://github.com/drsamonline/AethelgardVN) | [drsamonline.github.io/aethelgard-games/books](https://drsamonline.github.io/aethelgard-games/books/) |
+| ⚔️ | **Aethelgard: Chronicles of Fate** — this game | the Aethelgard engine (this repo) | [drsamonline.github.io/aethelgard-games/play/chronicles](https://drsamonline.github.io/aethelgard-games/play/chronicles/) |
+| 📖 | **Aethelgard — The Books** — a visual novel | [Saga](https://github.com/drsamonline/AethelgardVN) | [drsamonline.github.io/aethelgard-games/play/books](https://drsamonline.github.io/aethelgard-games/play/books/) |
 
 🗂️ Both games live together in **[drsamonline/aethelgard-games](https://github.com/drsamonline/aethelgard-games)**.
 
