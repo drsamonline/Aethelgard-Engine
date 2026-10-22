@@ -16,6 +16,8 @@ No build step, no dependencies, fully offline: small modules loaded in script or
 
 **→ [Landing page](https://drsamonline.github.io/Aethelgard-Engine/)** · **→ [Play the demo](https://drsamonline.github.io/Aethelgard-Engine/play/)**
 
+**Download:** [Windows (.exe)](https://github.com/drsamonline/Aethelgard-Engine/releases/latest/download/Aethelgard-Engine-portable.exe) &nbsp;·&nbsp; [Android (.apk)](https://github.com/drsamonline/Aethelgard-Engine/releases/latest/download/Aethelgard-Engine.apk)
+
 </div>
 
 ---
