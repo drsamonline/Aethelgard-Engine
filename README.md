@@ -25,7 +25,7 @@ No build step, no dependencies, fully offline: small modules loaded in script or
 
 <div align="center">
 
-# ⚔️ Aethelgard: Chronicles of Fate
+## ⚔️ Aethelgard: Chronicles of Fate
 
 **A deep, single-player, text-based fantasy RPG for the browser.**
 
@@ -36,15 +36,10 @@ Built entirely with vanilla HTML, CSS and JavaScript — **no server, no build s
 [![Play on GitHub Pages](https://img.shields.io/badge/▶_PLAY_ON_GITHUB_PAGES-drsamonline.github.io-2EA44F?style=for-the-badge&logo=githubpages&logoColor=white)](https://drsamonline.github.io/aethelgard-games/play/chronicles/)
 
 [![Version](https://img.shields.io/badge/version-game%20v7%20·%20changelog%201.0.4-blue?style=flat-square)](CHANGELOG.md)
-[![License: MIT](https://img.shields.io/badge/code-MIT-green?style=flat-square)](LICENSE)
-[![Art License](https://img.shields.io/badge/art-©_reserved-orange?style=flat-square)](LICENSE-ASSETS.md)
 [![JavaScript](https://img.shields.io/badge/JavaScript-vanilla_ES5--ish-F7DF1E?style=flat-square&logo=javascript&logoColor=black)](#the-files-are-deliberately-kept-separate)
-[![No Dependencies](https://img.shields.io/badge/dependencies-0-brightgreen?style=flat-square)](#play-it)
-[![No Build Step](https://img.shields.io/badge/build_step-none-informational?style=flat-square)](#play-it)
 [![PWA Ready](https://img.shields.io/badge/PWA-installable%20%2B%20offline-blueviolet?style=flat-square&logo=pwa&logoColor=white)](#install-as-an-app-optional)
 [![Languages Shipped](https://img.shields.io/badge/interface-English-red?style=flat-square)](#languages)
 [![Mods Supported](https://img.shields.io/badge/mods-drop--in%20JS%20files-yellow?style=flat-square)](mods/README.md)
-[![Offline First](https://img.shields.io/badge/offline-first-success?style=flat-square)](#play-it)
 [![Mobile Friendly](https://img.shields.io/badge/mobile-responsive-lightgrey?style=flat-square)](#play-it)
 
 *Created by [Dr. Sohil Momin](#credits).*
