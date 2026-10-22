@@ -6,6 +6,7 @@
 No build step, no dependencies, fully offline: small modules loaded in script order behind one global (`window.Game`).
 
 [![Landing page](https://img.shields.io/badge/▶_LANDING_PAGE-drsamonline.github.io-60a5fa?style=for-the-badge&logo=githubpages&logoColor=white)](https://drsamonline.github.io/Aethelgard-Engine/)
+[![All projects](https://img.shields.io/badge/All%20projects-drsamonline.github.io-60a5fa?style=for-the-badge&logo=githubpages&logoColor=white)](https://drsamonline.github.io/)
 [![Play the demo](https://img.shields.io/badge/▶_PLAY_THE_DEMO-/play-8B5CF6?style=for-the-badge&logo=github&logoColor=white)](https://drsamonline.github.io/Aethelgard-Engine/play/)
 
 [![License: MIT](https://img.shields.io/badge/code-MIT-green?style=flat-square)](LICENSE)
