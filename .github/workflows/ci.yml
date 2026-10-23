@@ -25,14 +25,21 @@ jobs:
 
       - name: Validate JSON files
         run: |
-          python3 -m json.tool manifest.json > /dev/null
-          python3 -m json.tool mods/mods.json > /dev/null
+          fail=0
+          for f in $(find . -name '*.json' -not -path './.git/*' -not -path './node_modules/*'); do
+            python3 -m json.tool "$f" > /dev/null || { echo "JSON FAIL: $f"; fail=1; }
+          done
+          exit $fail
 
       - name: Run test suites
         run: |
-          node test6.js
-          node test7.js
-          node test8.js
+          # The engine-only repo ships no node test suites (test6/7/8.js went with
+          # the game content); run any that are present so this never goes stale.
+          found=0
+          for t in test6.js test7.js test8.js; do
+            if [ -f "$t" ]; then echo "running $t"; node "$t"; found=1; fi
+          done
+          [ "$found" -eq 1 ] || echo "no node test suites present in this repo"
 
       - name: Static audit (repo root)
         run: python3 tools/static-audit.py .
