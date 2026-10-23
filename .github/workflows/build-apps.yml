@@ -16,7 +16,10 @@ permissions:
 
 env:
   APP_NAME: Aethelgard-Engine
-  APP_SRC: docs/play
+  # The app (index.html + js/ + style.css + manifest.json) lives at the repo ROOT
+  # after the engine-only rewrite; docs/play no longer exists, which is why the
+  # staging step used to fail on every push.
+  APP_SRC: .
   KIT_REPO: drsamonline/app-builder
 
 jobs:
@@ -49,6 +52,7 @@ jobs:
           rm -rf builder/exe/app
           mkdir -p builder/exe/app
           cp -r "app-repo/${APP_SRC}/." builder/exe/app/
+          rm -rf builder/exe/app/.git builder/exe/app/.github
 
       - name: Build portable EXE
         shell: bash
@@ -106,6 +110,7 @@ jobs:
           rm -rf builder/apk/app/src/main/assets/www
           mkdir -p builder/apk/app/src/main/assets/www
           cp -r "app-repo/${APP_SRC}/." builder/apk/app/src/main/assets/www/
+          rm -rf builder/apk/app/src/main/assets/www/.git builder/apk/app/src/main/assets/www/.github
           sed -i "s/APP_NAME_PLACEHOLDER/${APP_NAME}/g" builder/apk/app/src/main/res/values/strings.xml
           SDK="${ANDROID_HOME:-$ANDROID_SDK_ROOT}"
           echo "sdk.dir=$SDK" > builder/apk/local.properties
