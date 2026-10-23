@@ -2,7 +2,7 @@
 """Static audit: every function, every reference, dead code, duplicates."""
 import re, pathlib, collections, json, sys
 
-ROOT = pathlib.Path(sys.argv[1] if len(sys.argv) > 1 else "/scratch/work/aethelgard")
+ROOT = pathlib.Path(sys.argv[1]) if len(sys.argv) > 1 else pathlib.Path(__file__).resolve().parent.parent
 JS = sorted(list(ROOT.glob("js/**/*.js")) + list(ROOT.glob("mods/**/*.js")))
 HTML = (ROOT / "index.html").read_text() if (ROOT / "index.html").exists() else ""
 
