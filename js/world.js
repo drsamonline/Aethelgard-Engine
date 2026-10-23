@@ -8,7 +8,7 @@ const G = window.Game;
 
 /* ---------- local maps: points of interest per region ---------- */
 const LOCAL_MAPS = {
-  oakhaven: [
+  town: [
     { id:"market",  name:"Market",      emoji:"🏪", x:22, y:30, act:"tab", tab:"market",   desc:"Trade goods and gear." },
     { id:"forge",   name:"Forge",       emoji:"🛠️", x:50, y:22, act:"tab", tab:"forge",    desc:"Craft weapons and armour." },
     { id:"inn",     name:"The Inn",     emoji:"🛏️", x:78, y:32, act:"inn",                 desc:"Rest to restore HP and energy (25g)." },
@@ -20,34 +20,34 @@ const LOCAL_MAPS = {
     { id:"farm",    name:"Fields",      emoji:"🌾", x:12, y:82, act:"farm",                desc:"Tend crops (needs a Farm)." },
     { id:"gate",    name:"Town Gate",   emoji:"🚪", x:88, y:84, act:"world",               desc:"Leave town — open the world map." },
   ],
-  mire: [
+  wilds: [
     { id:"wood",    name:"Timber Grove", emoji:"🪵", x:20, y:34, act:"gather", res:"wood", cost:5, desc:"Chop wood." },
     { id:"fish",    name:"Shallows",     emoji:"🎣", x:46, y:66, act:"fish",               desc:"Catch fish." },
     { id:"forage",  name:"Thickets",     emoji:"🌿", x:74, y:70, act:"forage",             desc:"Forage for herbs." },
-    { id:"wolf",    name:"Wolf Den",     emoji:"🐺", x:74, y:26, act:"hunt", spawn:["wolf"],             desc:"Hunt wolves." },
-    { id:"goblin",  name:"Goblin Camp",  emoji:"👺", x:24, y:78, act:"hunt", spawn:["goblin","goblin"], desc:"Hunt goblins." },
+    { id:"beast",    name:"Beast Den",     emoji:"🐺", x:74, y:26, act:"hunt", spawn:["beast"],             desc:"Hunt wolves." },
+    { id:"imp",  name:"Imp Camp",  emoji:"👺", x:24, y:78, act:"hunt", spawn:["imp","imp"], desc:"Hunt goblins." },
     { id:"bog",     name:"Bog Heart",    emoji:"🦠", x:50, y:14, act:"hunt", spawn:["bog_horror"], boss:true, desc:"Face the Bog Horror (boss)." },
-    { id:"coven",   name:"Coven Sanctum",emoji:"🕯️", x:88, y:40, act:"hunt", spawn:["coven"], boss:true, desc:"Face the Coven Leader (boss)." },
+    { id:"coven",   name:"Cult Sanctum",emoji:"🕯️", x:88, y:40, act:"hunt", spawn:["coven"], boss:true, desc:"Face the Cult Leader (boss)." },
   ],
-  cave: [
+  caves: [
     { id:"descend", name:"Cave Mouth",   emoji:"🕳️", x:50, y:40, act:"dungeon",            desc:"Descend into the dark." },
     { id:"leave",   name:"Exit",         emoji:"🚪", x:14, y:78, act:"world",              desc:"Return to the world map." },
   ],
-  mountains: [
+  peaks: [
     { id:"mine",    name:"Ore Seam",     emoji:"⛏️", x:22, y:30, act:"gather", res:"iron", cost:8, desc:"Mine iron." },
     { id:"prospect",name:"Deep Seams",   emoji:"💠", x:50, y:20, act:"prospect",           desc:"Search for gems." },
-    { id:"bandits", name:"Bandit Trail", emoji:"🗡️", x:76, y:52, act:"hunt", spawn:["bandit"],           desc:"Hunt bandits." },
+    { id:"bandits", name:"Brigand Trail", emoji:"🗡️", x:76, y:52, act:"hunt", spawn:["brigand"],           desc:"Hunt bandits." },
     { id:"ogres",   name:"Ogre Cave",    emoji:"👹", x:34, y:74, act:"hunt", spawn:["ogre"],             desc:"Hunt ogres." },
     { id:"harpy",   name:"Cliff Nests",  emoji:"🦅", x:74, y:18, act:"hunt", spawn:["harpy"],            desc:"Hunt harpies." },
   ],
-  temple: [
+  shrine: [
     { id:"pray",    name:"Altar",        emoji:"🙏", x:50, y:44, act:"pray",               desc:"Full restoration (40g)." },
     { id:"leave",   name:"Exit",         emoji:"🚪", x:16, y:80, act:"world",              desc:"Return to the world map." },
   ],
-  banditcamp: [
-    { id:"bandits", name:"Camp Perimeter",emoji:"🗡️", x:26, y:34, act:"hunt", spawn:["bandit","bandit"], desc:"Raid the bandits." },
-    { id:"mage",    name:"Mage's Tent",  emoji:"🧙", x:70, y:30, act:"hunt", spawn:["rogue_mage"],        desc:"Hunt the rogue mage." },
-    { id:"warlord", name:"Warlord's Hall",emoji:"⚔️", x:50, y:74, act:"hunt", spawn:["warlord"], boss:true, desc:"Face the Bandit Warlord (boss)." },
+  camp: [
+    { id:"bandits", name:"Camp Perimeter",emoji:"🗡️", x:26, y:34, act:"hunt", spawn:["brigand","brigand"], desc:"Raid the bandits." },
+    { id:"mage",    name:"Mage's Tent",  emoji:"🧙", x:70, y:30, act:"hunt", spawn:["mage"],        desc:"Hunt the rogue mage." },
+    { id:"warlord", name:"Warlord's Hall",emoji:"⚔️", x:50, y:74, act:"hunt", spawn:["warlord"], boss:true, desc:"Face the Brigand Warlord (boss)." },
   ],
   depths: [
     { id:"descend", name:"Descend",  emoji:"🕳️", x:34, y:44, act:"endless", desc:"Descend to the next floor of the Depths." },
@@ -58,24 +58,24 @@ const LOCAL_MAPS = {
     { id:"wraith",  name:"Flooded Halls",emoji:"👻", x:28, y:30, act:"hunt", spawn:["wraith"],            desc:"Hunt wraiths." },
     { id:"spiders", name:"Webbed Vault", emoji:"🕷️", x:72, y:34, act:"hunt", spawn:["spider","spider"],   desc:"Clear the spiders." },
     { id:"golem",   name:"Stone Court",  emoji:"🗿", x:30, y:76, act:"hunt", spawn:["golem"],             desc:"Hunt a stone golem." },
-    { id:"warden",  name:"The Seal",     emoji:"🔒", x:66, y:74, act:"hunt", spawn:["warden"], boss:true, desc:"Face the Iron Warden (boss)." },
+    { id:"warden",  name:"The Seal",     emoji:"🔒", x:66, y:74, act:"hunt", spawn:["warden"], boss:true, desc:"Face the Iron Guardian (boss)." },
   ],
 };
 G.LOCAL_MAPS = LOCAL_MAPS;
 
 /* ---------- world map node positions ---------- */
 const WORLD_POS = {
-  oakhaven:{ x:50, y:52 }, mire:{ x:26, y:74 }, cave:{ x:52, y:20 }, mountains:{ x:78, y:44 },
-  temple:{ x:22, y:30 }, banditcamp:{ x:80, y:74 }, ruins:{ x:14, y:56 }, depths:{ x:50, y:88 },
+  town:{ x:50, y:52 }, wilds:{ x:26, y:74 }, caves:{ x:52, y:20 }, peaks:{ x:78, y:44 },
+  shrine:{ x:22, y:30 }, camp:{ x:80, y:74 }, ruins:{ x:14, y:56 }, depths:{ x:50, y:88 },
 };
-const WORLD_LINKS = [["oakhaven","mire"],["oakhaven","cave"],["oakhaven","mountains"],["oakhaven","temple"],["oakhaven","ruins"],["oakhaven","banditcamp"],["mire","ruins"],["cave","mountains"],["ruins","depths"]];
+const WORLD_LINKS = [["town","wilds"],["town","caves"],["town","peaks"],["town","shrine"],["town","ruins"],["town","camp"],["wilds","ruins"],["caves","peaks"],["ruins","depths"]];
 G.WORLD_POS = WORLD_POS; G.WORLD_LINKS = WORLD_LINKS;
 
 /* ---------- travel ---------- */
 G.isUnlocked = function (id) {
   const p = G.state;
   if (p.map.unlocked.indexOf(id) >= 0) return true;
-  if ((id === "banditcamp" || id === "depths") && p.mode === "open") return true;
+  if ((id === "camp" || id === "depths") && p.mode === "open") return true;
   // a region may declare its own opening condition — a mod-added region needs this
   const l = G.LOCATIONS[id];
   if (l && l.unlock) {
@@ -124,7 +124,7 @@ G.pray = function () {
   const p = G.state;
   if (p.gold < 40) { G.notify("warning", "Need 40 gold", ""); return; }
   p.gold -= 40; p.hp = G.maxHp(); p.energy = G.maxEnergy(); p.nerve = G.maxNerve();
-  G.log("🙏 The temple's light restores you fully."); G.notify("good","Restored","Fully healed"); G.Sound.play("heal"); G.render();
+  G.log("🙏 The shrine's light restores you fully."); G.notify("good","Restored","Fully healed"); G.Sound.play("heal"); G.render();
 };
 G.restInn = function () {
   const p = G.state;
@@ -198,7 +198,7 @@ G.localAct = function (poiId) {
 };
 
 /* ---------- market ---------- */
-G.priceBuy = function (item) { const rep = G.state.reputation.oakhaven; const trade = G.state.settlement.buildings.market||0; return Math.max(1, Math.ceil((G.state.market[item]||10) * 1.6 * (rep>50?0.9:1) * (1 - trade*0.04))); };
+G.priceBuy = function (item) { const rep = G.state.reputation.town; const trade = G.state.settlement.buildings.market||0; return Math.max(1, Math.ceil((G.state.market[item]||10) * 1.6 * (rep>50?0.9:1) * (1 - trade*0.04))); };
 G.sellItem = function (item) { const p = G.state; if ((p.inv[item]||0) < 1) return; const price = Math.round((p.market[item]||10)*G.goldMult()); p.inv[item]--; p.gold += price; p.stats.goldEarned += price; G.log(`🪙 Sold 1 ${G.itemName(item)} for ${price}g.`); G.Sound.play("coin"); G.render(); };
 G.buyItem = function (item) { const p = G.state, price = G.priceBuy(item); if (p.gold < price) { G.notify("warning","Not enough gold",""); G.Sound.play("error"); return; } p.gold -= price; p.stats.goldSpent += price; p.inv[item] = (p.inv[item]||0)+1; G.log(`🛒 Bought 1 ${G.itemName(item)}.`); G.Sound.play("coin"); G.render(); };
 G.buyConsumable = function (item, price) { const p = G.state; if (p.gold < price) { G.notify("warning","Not enough gold",""); return; } p.gold -= price; p.stats.goldSpent += price; p.inv[item] = (p.inv[item]||0)+1; G.Sound.play("coin"); G.render(); };
@@ -379,14 +379,14 @@ G.triggerEvent = function () {
 };
 G.closeEvent = function () { G.closeModal("event-overlay"); G.pendingEvent = null; };
 G.eventChoice = function (action) { G.closeEvent(); if (typeof G[action] === "function") G[action](); G.render(); };
-G.eventFight = function () { const loc = G.state.map.current; const pool = (G.LOCATIONS[loc]&&G.LOCATIONS[loc].spawns)||["wolf"]; G.startCombat([G.pick(pool)], { cost:0, context:"event" }); };
+G.eventFight = function () { const loc = G.state.map.current; const pool = (G.LOCATIONS[loc]&&G.LOCATIONS[loc].spawns)||["beast"]; G.startCombat([G.pick(pool)], { cost:0, context:"event" }); };
 G.eventFlee = function () { if (Math.random() < G.fleeChance()) G.log("🏃 You slip away unscathed."); else { const dmg = Math.round(G.maxHp()*0.12); G.state.hp = Math.max(1, G.state.hp-dmg); G.log(`🩸 You escape, but take ${dmg} damage.`); G.flash(); G.Sound.play("hit"); } };
 G.eventBuyPotion = function () { const p = G.state; if (p.gold < 20) { G.notify("warning","Not enough gold",""); return; } p.gold -= 20; p.inv.potion++; G.notify("good","Bought a potion","−20g"); G.Sound.play("coin"); };
 G.eventBuyIron = function () { const p = G.state; if (p.gold < 10) { G.notify("warning","Not enough gold",""); return; } p.gold -= 10; p.inv.iron = (p.inv.iron||0)+2; G.notify("good","Bought 2 iron","−10g"); G.Sound.play("coin"); };
 G.eventBlessMight = function () { G.state.attrs.might++; G.notify("good","Shrine blessing","+1 Might"); G.Sound.play("heal"); };
 G.eventBlessHp = function () { G.state.hp = G.maxHp(); G.notify("good","Shrine blessing","Fully healed"); G.Sound.play("heal"); };
 G.eventCache = function () { const p = G.state; const gold = G.rndInt(15,60); p.gold += gold; p.stats.goldEarned += gold; const it = G.pick(["iron","leather","wood","herb"]); p.inv[it] = (p.inv[it]||0)+G.rndInt(1,3); G.notify("good","Hidden cache",`+${gold}g and some ${it}`); G.Sound.play("coin"); };
-G.eventHelp = function () { const p = G.state; p.gold = Math.max(0, p.gold-10); G.addRep("oakhaven",8); G.notify("info","You helped a traveller","Oakhaven reputation +8"); };
+G.eventHelp = function () { const p = G.state; p.gold = Math.max(0, p.gold-10); G.addRep("town",8); G.notify("info","You helped a traveller","Town reputation +8"); };
 G.eventCatch = function () { const p = G.state; if (Math.random() < 0.5 + p.skills.stealth*0.03) { const g = G.rndInt(10,40); p.gold += g; G.notify("good","Caught the cutpurse",`+${g}g`); G.Sound.play("coin"); } else { const g = Math.min(p.gold, G.rndInt(10,40)); p.gold -= g; G.notify("bad","Cutpurse escaped",`−${g}g`); G.Sound.play("error"); } };
 G.eventCaravan = function () { const p = G.state; if (p.gold < 40) { G.notify("warning","Need 40 gold",""); return; } p.gold -= 40; if (Math.random() < 0.55) { const win = 100; p.gold += win; G.notify("good","Caravan paid off",`+${win}g`); G.Sound.play("coin"); } else { G.notify("bad","Caravan lost", "−40g"); G.Sound.play("error"); } };
 G.eventDuel = function () { const loc = G.state.map.current; G.startCombat(["assassin"], { cost:0, context:"event" }); };
@@ -418,12 +418,12 @@ G.eventWindfall = function () { const p = G.state; const gold = G.rndInt(25,80);
 /* ---------- quality of life ---------- */
 G.returnToTown = function () {
   const p = G.state;
-  if (p.map.current === "oakhaven") { G.notify("info", "You are already in Oakhaven", ""); return; }
+  if (p.map.current === "town") { G.notify("info", "You are already in Town", ""); return; }
   p.dungeon.active = false; p.dungeon.depth = 0;
   p.endless.active = false; p.endless.floor = 0; p.endless.mods = [];
-  p.map.current = "oakhaven";
-  if (p.map.visited.indexOf("oakhaven") < 0) p.map.visited.push("oakhaven");
-  G.log("🏘️ You return to Oakhaven."); G.notify("info", "Returned to Oakhaven", ""); G.render();
+  p.map.current = "town";
+  if (p.map.visited.indexOf("town") < 0) p.map.visited.push("town");
+  G.log("🏘️ You return to Town."); G.notify("info", "Returned to Town", ""); G.render();
 };
 G.sellAllMaterials = function () {
   const p = G.state; let total = 0, count = 0;
@@ -477,10 +477,10 @@ G.getHints = function () {
   if (p.ap > 0) h.push(`You have ${p.ap} unspent attribute point${p.ap>1?"s":""} — spend them in the Hero tab.`);
   if (p.sp > 0) h.push(`You have ${p.sp} unspent skill point${p.sp>1?"s":""} — spend them in the Skills tab.`);
   if (p.settlement.level >= 1 && !p.settlement.buildings.farm) h.push("Build a Farm in the Home tab for steady food and income.");
-  if (p.story.chapter === 3) h.push("Descend the Dark Cave to depth 3. Leave and re-enter to bank progress if you're low on energy.");
-  if (p.story.chapter === 4) h.push("The Coven Leader resists Dark — bring Fire damage, and Defend when it telegraphs Necrotic Wave.");
-  if (p.story.chapter === 5) h.push("The Iron Warden resists Physical and is weak to Ice — use Frost Nova or ice weapons.");
-  if (p.level < 6) h.push("Fight the Arena waves in Oakhaven or hunt in the Crimson Mire to level up quickly.");
+  if (p.story.chapter === 3) h.push("Descend the The Caves to depth 3. Leave and re-enter to bank progress if you're low on energy.");
+  if (p.story.chapter === 4) h.push("The Cult Leader resists Dark — bring Fire damage, and Defend when it telegraphs Necrotic Wave.");
+  if (p.story.chapter === 5) h.push("The Iron Guardian resists Physical and is weak to Ice — use Frost Nova or ice weapons.");
+  if (p.level < 6) h.push("Fight the Arena waves in Town or hunt in the The Wilds to level up quickly.");
   const cm = G.activeQuests().find(q => q.type === "class");
   if (cm) h.push(`Class mission ready: ${cm.name} — ${cm.desc}`);
   const failed = G.activeQuests().find(q => q.attempts > 0);

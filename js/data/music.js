@@ -21,8 +21,8 @@ const MUSIC_MOODS = {
 
 /* where each mood plays */
 const MUSIC_BY_LOCATION = {
-  oakhaven:"town", temple:"calm", mire:"mysterious", cave:"mysterious",
-  mountains:"epic", banditcamp:"danger", ruins:"somber",
+  town:"town", shrine:"calm", wilds:"mysterious", caves:"mysterious",
+  peaks:"epic", camp:"danger", ruins:"somber",
 };
 const MUSIC_COMBAT = "tense";
 const MUSIC_BOSS = "boss";

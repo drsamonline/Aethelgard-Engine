@@ -477,9 +477,9 @@ G.handleDeath = function (context, questId) {
   p.hp = Math.max(1, Math.floor(G.maxHp()*0.5));
   p.energy = Math.max(0, Math.floor(G.maxEnergy()*0.5));
   p.dungeon.active = false; p.dungeon.depth = 0;
-  p.map.current = "oakhaven";
-  G.log(`💀 You were slain. You wake in Oakhaven, ${lost}g lighter.`);
-  G.notify("warning", "You have fallen", `Lost ${lost} gold. Respawned in Oakhaven.`);
+  p.map.current = "town";
+  G.log(`💀 You were slain. You wake in Town, ${lost}g lighter.`);
+  G.notify("warning", "You have fallen", `Lost ${lost} gold. Respawned in Town.`);
   G.Sound.play("death");
   if (G.onDefeat) G.onDefeat(context, questId);
 };

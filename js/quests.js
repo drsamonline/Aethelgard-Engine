@@ -146,8 +146,8 @@ G.advanceChapter = function () {
   if (next) {
     p.story.chapter = next.id;
     // region unlocks keyed to story position, so they survive added chapters
-    if (idx + 1 === 1) ["cave","mountains"].forEach(l => { if (p.map.unlocked.indexOf(l) < 0) p.map.unlocked.push(l); });
-    if (idx + 1 === 4) ["ruins","banditcamp"].forEach(l => { if (p.map.unlocked.indexOf(l) < 0) p.map.unlocked.push(l); });
+    if (idx + 1 === 1) ["caves","peaks"].forEach(l => { if (p.map.unlocked.indexOf(l) < 0) p.map.unlocked.push(l); });
+    if (idx + 1 === 4) ["ruins","camp"].forEach(l => { if (p.map.unlocked.indexOf(l) < 0) p.map.unlocked.push(l); });
     G.log(`📜 ${next.title}`);
     G.startChapter();
   } else G.openWorld();                 // nothing left to play — open the world up
@@ -206,15 +206,15 @@ G.unlockClassMissions = function () {
 G.onEnemyDefeated = function (id) {
   const p = G.state;
   G.progressQuest("kill", id, 1);
-  const REP = { bandit:{oakhaven:2,bandits:-3}, rogue_mage:{oakhaven:1,bandits:-2}, ogre:{oakhaven:1}, spider:{oakhaven:1}, wraith:{oakhaven:2}, coven:{oakhaven:8,coven:-8}, warden:{oakhaven:12,coven:-4}, warlord:{oakhaven:10,bandits:-12}, bog_horror:{oakhaven:6}, spider_queen:{oakhaven:6} };
+  const REP = { brigand:{town:2,bandits:-3}, mage:{town:1,bandits:-2}, ogre:{town:1}, spider:{town:1}, wraith:{town:2}, coven:{town:8,coven:-8}, warden:{town:12,coven:-4}, warlord:{town:10,bandits:-12}, bog_horror:{town:6}, spider_queen:{town:6} };
   if (REP[id]) for (const f in REP[id]) G.addRep(f, REP[id][f]);
-  if (id === "wolf") p.flags.wolf = true;
+  if (id === "beast") p.flags.beast = true;
   if (id === "coven") p.flags.coven = true;
   if (id === "warden") p.flags.warden = true;
 };
 G.onDungeonDepth = function (depth) {
   G.state.stats.deepestDepth = Math.max(G.state.stats.deepestDepth, depth);
-  G.setQuestProgress("depth", "cave", depth);
+  G.setQuestProgress("depth", "caves", depth);
 };
 G.onVictory = function () { G.progressQuest("wins", "any", 1); };
 

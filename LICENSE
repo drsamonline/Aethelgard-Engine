@@ -2,12 +2,6 @@ MIT License
 
 Copyright (c) 2026 Dr. Sohil Momin
 
-This licence covers the Aethelgard ENGINE: all JavaScript, HTML, CSS, JSON and
-tooling in this repository — that is, everything EXCEPT the artwork and audio.
-
-The artwork and audio are licensed separately and are NOT open source.
-See LICENSE-ASSETS.md.
-
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
 in the Software without restriction, including without limitation the rights

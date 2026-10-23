@@ -17,7 +17,7 @@ const RACES = {
     bonus:{ finesse:3, sorcery:1 }, crit:0.08, nightEase:true,
   },
   dwarf: {
-    name:"Dwarf", emoji:"🧔", desc:"Stone-hard and stubborn, born of the mountains.",
+    name:"Dwarf", emoji:"🧔", desc:"Stone-hard and stubborn, born of the peaks.",
     perk:"+3 Vitality, +4 defence, gathers more ore and gems.",
     bonus:{ vitality:3, might:1 }, def:4, mineBonus:true,
   },
