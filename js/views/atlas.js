@@ -22,7 +22,7 @@ G.viewAtlas = function () {
     ${G.mapMode==="world" ? G.renderWorldMap() : G.renderLocalMap()}
     <div class="btn-row" style="margin-top:10px">
       ${G.mapMode==="local" ? `<button class="btn btn-sm" onclick="Game.searchSecrets()" ${p.energy<10?"disabled":""}>🔍 Search for secrets (10⚡)</button>` : ""}
-      <button class="btn btn-sm" onclick="Game.returnToTown()">🏘️ Return to Oakhaven</button>
+      <button class="btn btn-sm" onclick="Game.returnToTown()">🏘️ Return to Town</button>
     </div>
     <p class="muted small" style="margin-top:10px">${G.mapMode==="world" ? "Click a discovered region to travel. Locked regions open as the story progresses." : "Click a point of interest to act. Danger rises with the region."}</p>
   </div>`;

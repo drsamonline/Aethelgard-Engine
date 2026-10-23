@@ -38,7 +38,7 @@ const Music = G.Music = {
     if (!p) return G.MUSIC_START;
     if (p.combat && p.combat.active) return p.combat.enemies && p.combat.enemies.some(e => e.boss) ? G.MUSIC_BOSS : G.MUSIC_COMBAT;
     if (p.map && p.map.current === "endless") return G.MUSIC_BOSS;
-    return G.MUSIC_BY_LOCATION[p.map ? p.map.current : "oakhaven"] || "calm";
+    return G.MUSIC_BY_LOCATION[p.map ? p.map.current : "town"] || "calm";
   },
   update() {
     if (!G.settings.music) { this.stop(); return; }

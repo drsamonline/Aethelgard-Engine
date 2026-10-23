@@ -1,5 +1,5 @@
 /* ============================================================
-   Aethelgard — DATA: core constants, items, buildings, themes
+   the world — DATA: core constants, items, buildings, themes
    Created by Dr. Sohil Momin
    ============================================================ */
 "use strict";
@@ -81,18 +81,18 @@ const BUILDINGS = {
   barracks: { name:"Barracks", emoji:"⚔️", desc:"Trains militia — +8 max HP per level.", max:3, cost:{ wood:45, iron:15 } },
   workshop: { name:"Workshop", emoji:"🔨", desc:"Improves crafting rarity odds.", max:3, cost:{ wood:50, iron:20, leather:10 } },
   market:   { name:"Trade Post",emoji:"⚖️", desc:"Better market prices per level.", max:3, cost:{ wood:55, iron:15, leather:15 } },
-  temple:   { name:"Shrine",   emoji:"🛕", desc:"Slow HP regen while you adventure.", max:2, cost:{ wood:40, ruby:1 } },
+  shrine:   { name:"Shrine",   emoji:"🛕", desc:"Slow HP regen while you adventure.", max:2, cost:{ wood:40, ruby:1 } },
 };
 
 const SLOTS = [["weapon","Weapon"],["offhand","Offhand"],["armor","Armor"],["helmet","Helmet"],["boots","Boots"],["ring","Ring"],["amulet","Amulet"]];
 
 const LOCATIONS = {
-  oakhaven:   { name:"Oakhaven",      emoji:"🏘️", safe:true, danger:0, desc:"A walled town. Rest, trade and plan your next move." },
-  mire:       { name:"Crimson Mire",  emoji:"🌫️", danger:1, spawns:["wolf","goblin","spider","boar"], desc:"Boggy hunting grounds — timber, wolves and goblins." },
-  cave:       { name:"Dark Cave",     emoji:"🕳️", danger:2, desc:"A descending dungeon. Deeper means richer, and deadlier." },
-  mountains:  { name:"Iron Peaks",    emoji:"⛰️", danger:2, spawns:["bandit","ogre","harpy","ghoul"], desc:"Ore-rich crags prowled by bandits and ogres." },
-  temple:     { name:"Sunken Temple", emoji:"🛕", danger:0, desc:"An old shrine. Offer gold for full restoration." },
-  banditcamp: { name:"Bandit Camp",   emoji:"🏕️", danger:3, spawns:["bandit","rogue_mage","assassin"], desc:"A lawless nest of cutthroats and rogue mages." },
+  town:   { name:"town",      emoji:"🏘️", safe:true, danger:0, desc:"A walled town. Rest, trade and plan your next move." },
+  wilds:       { name:"The Wilds",  emoji:"🌫️", danger:1, spawns:["beast","imp","spider","boar"], desc:"Boggy hunting grounds — timber, wolves and goblins." },
+  caves:       { name:"The Caves",     emoji:"🕳️", danger:2, desc:"A descending dungeon. Deeper means richer, and deadlier." },
+  peaks:  { name:"The Peaks",    emoji:"⛰️", danger:2, spawns:["brigand","ogre","harpy","ghoul"], desc:"Ore-rich crags prowled by bandits and ogres." },
+  shrine:     { name:"Old Shrine", emoji:"🛕", danger:0, desc:"An old shrine. Offer gold for full restoration." },
+  camp: { name:"Raider Camp",   emoji:"🏕️", danger:3, spawns:["brigand","mage","assassin"], desc:"A lawless nest of cutthroats and rogue mages." },
   ruins:      { name:"Sunken Ruins",  emoji:"🏛️", danger:3, spawns:["wraith","spider","golem"], desc:"Flooded halls where the wraiths gather." },
   depths:     { name:"The Depths",    emoji:"🕳️", danger:3, desc:"An endless dungeon that reshapes itself on every floor." },
 };

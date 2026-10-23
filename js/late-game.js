@@ -106,15 +106,15 @@ G.settlementRaid = function () {
   p.settlement.treasury -= loss;
   G.notify("bad", "Your settlement is under attack!", `Treasury −${loss}g — defend it!`);
   G._raidThreat = threat;
-  G.startCombat(["bandit","bandit"], { cost:0, context:"raid" });
+  G.startCombat(["brigand","brigand"], { cost:0, context:"raid" });
 };
 G.raidWon = function () { const p = G.state; p.stats.defendsWon++; G.notify("good", "Raid repelled!", "Your settlement is safe."); };
 G.raidLost = function () { const p = G.state; const loss = Math.min(p.settlement.treasury, 40 + p.settlement.level*20); p.settlement.treasury -= loss; G.notify("bad", "The raid succeeded", `Treasury −${loss}g`); };
 
 /* ================= CARAVANS ================= */
 G.CARAVAN_ROUTES = [
-  { id:"mire",   name:"Mire Timber Run",   cost:80,  ticks:30, mult:1.7, risk:0.12 },
-  { id:"peaks",  name:"Iron Peaks Convoy", cost:160, ticks:45, mult:2.0, risk:0.18 },
+  { id:"wilds",   name:"Wilds Timber Run",   cost:80,  ticks:30, mult:1.7, risk:0.12 },
+  { id:"peaks",  name:"The Peaks Convoy", cost:160, ticks:45, mult:2.0, risk:0.18 },
   { id:"ruins",  name:"Ruins Relic Trail", cost:260, ticks:60, mult:2.6, risk:0.28 },
 ];
 G.investCaravan = function (id) {
@@ -176,11 +176,11 @@ G.unsocketGem = function (slot, idx) {
 
 /* ================= MAP SECRETS ================= */
 const SECRETS = {
-  mire:      [{ id:"bog_cache",  name:"Bog Cache",     emoji:"📦", reward:{ gold:120 } }],
-  mountains: [{ id:"gem_vein",   name:"Hidden Gem Vein",emoji:"💠", reward:{ gem:true } }],
+  wilds:      [{ id:"bog_cache",  name:"Bog Cache",     emoji:"📦", reward:{ gold:120 } }],
+  peaks: [{ id:"gem_vein",   name:"Hidden Gem Vein",emoji:"💠", reward:{ gem:true } }],
   ruins:     [{ id:"lost_shrine",name:"Lost Shrine",   emoji:"🛕", reward:{ relic:1 } }],
-  cave:      [{ id:"deep_chest", name:"Deep Chest",    emoji:"🗝️", reward:{ gold:200, item:"ruby" } }],
-  banditcamp:[{ id:"loot_pit",   name:"Loot Pit",      emoji:"💰", reward:{ gold:180 } }],
+  caves:      [{ id:"deep_chest", name:"Deep Chest",    emoji:"🗝️", reward:{ gold:200, item:"ruby" } }],
+  camp:[{ id:"loot_pit",   name:"Loot Pit",      emoji:"💰", reward:{ gold:180 } }],
 };
 G.secretKey = function (loc, id) { return loc + "/" + id; };
 G.regionSecrets = function (loc) { return SECRETS[loc] || []; };

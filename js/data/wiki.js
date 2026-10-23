@@ -1,5 +1,5 @@
 /* ============================================================
-   Aethelgard — DATA: wiki entries (used by tooltips and the wiki tab)
+   the world — DATA: wiki entries (used by tooltips and the wiki tab)
    Created by Dr. Sohil Momin
    ============================================================ */
 "use strict";
@@ -9,11 +9,11 @@ const W = {};
 const add = (key, title, cat, short, body) => { W[key] = { key, title, cat, short, body: body || short }; };
 
 /* --- manual mechanic entries --- */
-add("hp","Health (HP)","Basics","Your life. At 0 you are slain and respawn in Oakhaven, losing 10% gold.","Health is your life total. It regenerates slowly over time and is restored by potions, rest and prayer. If it reaches zero you are defeated — you wake in Oakhaven having lost 10% of your gold, and any dungeon progress is reset.");
+add("hp","Health (HP)","Basics","Your life. At 0 you are slain and respawn in town, losing 10% gold.","Health is your life total. It regenerates slowly over time and is restored by potions, rest and prayer. If it reaches zero you are defeated — you wake in town having lost 10% of your gold, and any dungeon progress is reset.");
 add("energy","Energy","Basics","Spent on gathering, exploring, fighting, crafting and activities. Regenerates over time.","Energy powers nearly every action: gathering, mining, exploring the dungeon, starting a fight, casting skills and doing activities. It refills steadily as you play, and each level-up grants more maximum energy.");
-add("nerve","Nerve","Basics","The currency of the Underworld — crimes, heists and guild jobs.","Nerve is spent on illicit actions in the Underworld tab: pickpocketing, lockpicking, heists and guild jobs. It regenerates slowly and is fully restored at the temple.");
+add("nerve","Nerve","Basics","The currency of the Underworld — crimes, heists and guild jobs.","Nerve is spent on illicit actions in the Underworld tab: pickpocketing, lockpicking, heists and guild jobs. It regenerates slowly and is fully restored at the shrine.");
 add("xp","Experience (XP)","Basics","Fill the bar to level up.","Defeating enemies, completing quests and events all grant XP. When the bar fills you level up, gaining attribute points, a skill point, more health, energy and nerve, and a full heal.");
-add("gold","Gold","Basics","The currency of Aethelgard.","Gold buys materials, gear upgrades, potions, rest, information and more. Sell gathered materials when market prices are high to maximise profit.");
+add("gold","Gold","Basics","The currency of the world.","Gold buys materials, gear upgrades, potions, rest, information and more. Sell gathered materials when market prices are high to maximise profit.");
 add("might","Might","Attributes","Increases melee attack damage.","Each point of Might adds to your physical attack power. Essential for melee classes like the Berserker and Warrior.");
 add("finesse","Finesse","Attributes","Increases critical-hit chance and escape chance.","Finesse sharpens your reflexes: more critical hits in combat and a better chance to flee. Valued by Rogues, Archers and Duelists.");
 add("sorcery","Sorcery","Attributes","Increases spell power.","Sorcery raises the damage of magic skills. Mages live and die by it, but any class with a magic skill benefits.");
@@ -32,10 +32,10 @@ add("multienemy","Multiple Enemies","Combat","Fights can involve several foes at
 add("elements","Elements","Combat","Physical, Fire, Ice, Poison, Dark and Light.","Every attack has an element. Enemies may resist some elements and be weak to others — hitting a weakness deals 50% more, a resistance cuts damage.");
 add("rarity","Item Rarity","Gear","Common, Rare, Epic, Legendary and Mythic.","Rarity multiplies an item's stats and grants random affixes. Higher rarity comes from tougher enemies, higher Craft skill and a better Workshop.");
 add("affix","Affixes","Gear","Bonus properties on rare and better gear.","Affixes add stats like crit, might, health, spell power, defence, gold find, energy or lifesteal. The rarer the item, the more affixes it carries.");
-add("gearupgrade","Gear Upgrades","Gear","Improve equipped gear up to +5 with iron and gold.","In the Hero tab you can upgrade any equipped item. Each level costs iron and gold and adds to its stats. Requires iron from the Iron Peaks.");
+add("gearupgrade","Gear Upgrades","Gear","Improve equipped gear up to +5 with iron and gold.","In the Hero tab you can upgrade any equipped item. Each level costs iron and gold and adds to its stats. Requires iron from the Peaks.");
 add("gearbag","Gear Bag","Gear","Where new equipment waits until you equip it.","Looted and crafted gear lands in your bag. Equip it from the Hero tab, or salvage it for gold. Equipping swaps out whatever you had.");
-add("reputation","Reputation","World","How factions feel about you.","Oakhaven, the Iron Coven and the Bandits each track your standing. High Oakhaven reputation lowers market buy prices and opens doors; choices and kills shift it.");
-add("heat","Heat","Underworld","Suspicion from the town watch.","Every crime adds Heat. At high Heat the watch may shake you down as you travel, costing gold. Cool it with the Lay Low action or let it decay over time.");
+add("reputation","Reputation","World","How factions feel about you.","town, several factions each track your standing. High town reputation lowers market buy prices and opens doors; choices and kills shift it.");
+add("heat","Heat","Underworld","Suspicion from town watch.","Every crime adds Heat. At high Heat the watch may shake you down as you travel, costing gold. Cool it with the Lay Low action or let it decay over time.");
 add("underworld","The Underworld","Underworld","Crime, heists and the black market.","Spend Nerve on pickpocketing, lockpicking, heists and guild jobs. Success scales with Stealth, Finesse and class. The black market trades contraband relics.");
 add("guild","Thieves' Guild","Underworld","Renown unlocks better jobs.","Successful heists and guild jobs build renown. Higher renown unlocks more lucrative work.");
 add("blackmarket","Black Market","Underworld","Buy and sell contraband.","The fence sells stolen relics cheap and buys them back at a premium. Risky, but profitable.");
@@ -53,8 +53,8 @@ add("bounty","Bounties","Quests","Endless procedural missions in the Open World.
 add("class_mission","Class Missions","Quests","Missions exclusive to your class.","Each class has its own mission line with unique rewards and a title. They test the strengths of your chosen path.");
 add("prepare_hint","Preparation Hints","Quests","Advice shown after a failure.","If you fail a mission, a hint appears telling you how to prepare for the next attempt — gear, potions, elements, level and tactics.");
 add("save","Saving","Meta","Your progress is saved automatically.","The game auto-saves to your slot. Use Menu → Export Save to copy a backup string, and Import Save to restore it on another device.");
-add("arena","The Arena","Activities","Fight waves for gold and glory.","Available in Oakhaven. Each wave is harder than the last, but the rewards grow with it.");
-add("fishing","Fishing","Activities","Catch fish in the Mire.","Spend energy to fish. Fish are sold at market or cooked into hearty meals.");
+add("arena","The Arena","Activities","Fight waves for gold and glory.","Available in town. Each wave is harder than the last, but the rewards grow with it.");
+add("fishing","Fishing","Activities","Catch fish in the Wilds.","Spend energy to fish. Fish are sold at market or cooked into hearty meals.");
 add("gambling","Gambling","Activities","Wager gold on the dice.","The Dice Den takes a wager and rolls. Win for profit, lose it all — the house always has an edge.");
 add("cooking","Cooking","Activities","Turn ingredients into buffs.","Cooking combines fish and food into meals that grant regeneration in combat.");
 add("farming","Farming","Activities","Grow crops in your settlement.","Tend your fields for food and a little coin. Requires a Farm.");
@@ -65,13 +65,13 @@ add("mod_format","Mod format","Mods","One JS file that pushes an object onto win
 add("mod_tiers","Mod impact tiers","Mods","content, story or overhaul.","Content mods (impact \"additive\") add enemies, items, quests or languages and can be toggled instantly. Story and overhaul mods change the narrative or rebalance the game, so they only load on a fresh start — never mid-session — to keep your save safe.");
 add("mod_safe","Safe mode","Mods","Run the game with no mods at all.","Safe mode disables every mod for the session. Turn it on in Settings, or add ?safe=1 to the address. Use it if a mod misbehaves; your save is untouched and you can fix the mod and reload.");
 add("graphics","Graphics packs","Mods","Art packs that replace the emoji with images.","A graphics pack is a mod that registers images for the game's sprite keys. Anything a pack does not cover keeps its emoji, so a partial pack still works. Pick one in Settings → Graphics pack."),
-add("sprite_keys","Sprite keys","Mods","How the game asks for art.","The game draws every entity through one function, Game.sprite(key, fallback). Keys look like enemy.wolf, class.mage, item.potion, loc.oakhaven, companion.bryn. Register an image for a key and it replaces the emoji there."),
+add("sprite_keys","Sprite keys","Mods","How the game asks for art.","The game draws every entity through one function, Game.sprite(key, fallback). Keys look like enemy.beast, class.mage, item.potion, loc.town, companion.bryn. Register an image for a key and it replaces the emoji there."),
 add("graphics_pack","Making an art pack","Mods","Ship images in a mod under GRAPHICS.","A mod adds a GRAPHICS object with an id, a base folder, an optional scale and palette, and a sprites map of key to image (or to a sheet cell, optionally animated). See mods/README.md and mods/example-graphics for a working pack."),
 add("graphics_bg","Region backdrops","Graphics","Full-screen art behind the UI.","A graphics pack can supply a backdrop for each region (bg.<region>) plus bg.title, bg.world and bg.combat. The page background then changes as you travel. Backdrops are wide scenes, so they are never cut out — only character sprites are."),
 add("mod_compat","Mod compatibility","Mods","Which mods work together, and which clash.","Settings → Mods checks every enabled mod against the others and reports: green if they all work together, amber for overlaps (two mods writing the same entry — the later one wins), red for problems, where the mod is skipped and the game carries on."),
 add("mod_deps","Mod dependencies","Mods","requiresMods, conflicts, loadAfter, provides.","A mod can declare requiresMods (a hard dependency), conflicts (neither may be enabled), loadAfter/loadBefore (ordering), and provides/requiresProvides (capability tokens). An unmet dependency blocks just that mod and shows why."),
 add("mod_add","Adding a mod","Mods","Drop a file in mods/ and rebuild the manifest.","Put your .js file in the mods/ folder, run python3 tools/build-mods-index.py to refresh the manifest, then reload. When the game is served over http/https it reads mods/mods.json; opened from disk it reads mods/index.js.");
-add("bountyboard","Bounty Board","Activities","Take paid work in Oakhaven.","The board posts bounties for coin and renown. New bounties appear as you grow stronger.");
+add("bountyboard","Bounty Board","Activities","Take paid work in town.","The board posts bounties for coin and renown. New bounties appear as you grow stronger.");
 
 /* --- derived entries from game data --- */
 Object.keys(window.Game.CLASSES).forEach(k => {

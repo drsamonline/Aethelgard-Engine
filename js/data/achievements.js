@@ -7,13 +7,13 @@ window.Game = window.Game || {};
 
 const ACHIEVEMENTS = [
   { id:"first_blood", name:"First Blood",       emoji:"🩸", desc:"Win your first battle.",             check:s => s.stats.kills >= 1 },
-  { id:"wolf_slayer", name:"Wolf Slayer",       emoji:"🐺", desc:"Defeat the Diseased Wolf.",          check:s => s.flags.wolf },
-  { id:"goblin_bane", name:"Goblin Bane",       emoji:"👺", desc:"Defeat 10 goblins.",                 check:s => (s.stats.byEnemy.goblin||0) >= 10 },
+  { id:"wolf_slayer", name:"Beast Slayer",       emoji:"🐺", desc:"Defeat the Diseased Beast.",          check:s => s.flags.beast },
+  { id:"goblin_bane", name:"Imp Bane",       emoji:"👺", desc:"Defeat 10 goblins.",                 check:s => (s.stats.byEnemy.imp||0) >= 10 },
   { id:"bestiary",    name:"Bestiary Scholar",  emoji:"📖", desc:"Defeat 12 different enemy types.",   check:s => Object.keys(s.stats.byEnemy).length >= 12 },
   { id:"deep_diver",  name:"Deep Diver",        emoji:"🕳️", desc:"Reach dungeon depth 5.",             check:s => s.stats.deepestDepth >= 5 },
   { id:"abyss",       name:"Into the Abyss",    emoji:"⚫", desc:"Reach dungeon depth 10.",            check:s => s.stats.deepestDepth >= 10 },
-  { id:"coven_bane",  name:"Coven Broken",      emoji:"🧟", desc:"Defeat the Coven Leader.",           check:s => s.flags.coven },
-  { id:"warden",      name:"Colossus Felled",   emoji:"🗿", desc:"Defeat the Iron Warden.",            check:s => s.flags.warden },
+  { id:"coven_bane",  name:"Cult Broken",      emoji:"🧟", desc:"Defeat the Cult Leader.",           check:s => s.flags.coven },
+  { id:"warden",      name:"Colossus Felled",   emoji:"🗿", desc:"Defeat the Guardian.",            check:s => s.flags.warden },
   { id:"boss_slayer", name:"Boss Slayer",       emoji:"☠️", desc:"Defeat 5 bosses.",                   check:s => s.stats.bossKills >= 5 },
   { id:"rich",        name:"Deep Pockets",      emoji:"💰", desc:"Hold 1,000 gold.",                   check:s => s.gold >= 1000 },
   { id:"tycoon",      name:"Tycoon",            emoji:"🏦", desc:"Hold 25,000 gold.",                  check:s => s.gold >= 25000 },
@@ -44,7 +44,7 @@ const ACHIEVEMENTS = [
   { id:"ascend",      name:"Ascendant",         emoji:"♾️", desc:"Ascend once (New Game+).",           check:s => s.ascensions >= 1 },
   { id:"ascend3",     name:"Eternal",           emoji:"🌌", desc:"Ascend 3 times.",                    check:s => s.ascensions >= 3 },
   { id:"classdone",   name:"Master of One",     emoji:"🎖️", desc:"Complete your class mission line.",  check:s => s.stats.classMissions >= 2 },
-  { id:"pacifist",    name:"Diplomat",          emoji:"🕊️", desc:"Reach 50 reputation with all townsfolk.", check:s => (s.reputation.oakhaven||0) >= 50 },
+  { id:"pacifist",    name:"Diplomat",          emoji:"🕊️", desc:"Reach 50 reputation with all townsfolk.", check:s => (s.reputation.town||0) >= 50 },
 ];
 
 Object.assign(window.Game, { ACHIEVEMENTS });

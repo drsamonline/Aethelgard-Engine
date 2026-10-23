@@ -104,7 +104,7 @@ G.viewHero = function () {
   h += `</div></div>`;
 
   h += `<div class="panel"><h2>🤝 ${t("ui.reputation")}</h2><div class="stats-grid">`;
-  const fac = { oakhaven:"🏘️ Oakhaven", coven:"🧟 Iron Coven", bandits:"🏕️ Bandits" };
+  const fac = { town:"🏘️ Town", coven:"🧟 Iron Cult", bandits:"🏕️ Brigands" };
   for (const f in fac) { const v = p.reputation[f]||0, col = v>20?"var(--success)":v<-20?"var(--danger)":"var(--muted)";
     h += `<div class="stat-node"><div class="sn-left"><span class="sn-name">${fac[f]}</span></div><span class="sn-val" style="color:${col}">${v}</span></div>`; }
   h += `</div></div>`;

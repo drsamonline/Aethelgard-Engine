@@ -262,8 +262,8 @@ G.defaultState = function (slot, difficulty) {
     gems:{},
     gear:{ weapon:{key:"dagger",plus:0,rarity:"common",affix:[]}, offhand:{key:null,plus:0,rarity:"common",affix:[]}, armor:{key:"clothes",plus:0,rarity:"common",affix:[]}, helmet:{key:null,plus:0,rarity:"common",affix:[]}, boots:{key:null,plus:0,rarity:"common",affix:[]}, ring:{key:null,plus:0,rarity:"common",affix:[]}, amulet:{key:null,plus:0,rarity:"common",affix:[]} },
     gearBag:[],
-    map:{ current:"mire", unlocked:["oakhaven","mire","temple"], visited:["mire"] },
-    settlement:{ level:0, pop:0, treasury:0, buildings:{ farm:0, mine:0, tavern:0, barracks:0, workshop:0, market:0, temple:0 }, workers:{ farm:0, mine:0, tavern:0 } },
+    map:{ current:"wilds", unlocked:["town","wilds","shrine"], visited:["wilds"] },
+    settlement:{ level:0, pop:0, treasury:0, buildings:{ farm:0, mine:0, tavern:0, barracks:0, workshop:0, market:0, shrine:0 }, workers:{ farm:0, mine:0, tavern:0 } },
     market:{ wood:10, iron:15, leather:12, ruby:55, food:8, fish:9, herb:11, ore:26 },
     underworld:{ heat:0, guildRep:0, jobsDone:0 },
     dungeon:{ active:false, depth:0 },
@@ -276,7 +276,7 @@ G.defaultState = function (slot, difficulty) {
     failedQuests:{},
     story:{ chapter:1, choices:{}, pending:null, completed:false },
     mode:"story",
-    reputation:{ oakhaven:0, coven:0, bandits:0 },
+    reputation:{ town:0, coven:0, bandits:0 },
     achievements:{},
     notifications:[],
     flags:{},
@@ -475,7 +475,7 @@ G.tick = function () {
   if (p.time.ticks % 24 === 0) { p.time.phase = (p.time.phase+1)%4; if (p.time.phase === 0) { p.time.day++; G.log(`🌅 Day ${p.time.day} dawns.`); } }
 
   let regen = Math.max(2, Math.floor(G.maxHp()*0.02));
-  if (p.settlement.buildings.temple) regen += p.settlement.buildings.temple * 3;
+  if (p.settlement.buildings.shrine) regen += p.settlement.buildings.shrine * 3;
   if (p.hp < G.maxHp()) p.hp = Math.min(G.maxHp(), p.hp + regen);
   if (p.energy < G.maxEnergy()) p.energy = Math.min(G.maxEnergy(), p.energy + 2);
   if (p.nerve < G.maxNerve()) p.nerve = Math.min(G.maxNerve(), p.nerve + 1);
@@ -750,11 +750,11 @@ G.applyRaceClass = function () {
 };
 G.seed = function () {
   const p = G.state;
-  G.addQuest({ id:"q_supply", type:"side", name:"Supply Run", desc:"Gather 10 Wood from the Crimson Mire.", objective:{ type:"gather", target:"wood", required:10 }, rewards:{ gold:60, xp:40 }, unlocks:["Woodcutting knowledge"], prepare:["Travel to the Crimson Mire","Chop wood — it costs 5 energy each time"] });
+  G.addQuest({ id:"q_supply", type:"side", name:"Supply Run", desc:"Gather 10 Wood from the The Wilds.", objective:{ type:"gather", target:"wood", required:10 }, rewards:{ gold:60, xp:40 }, unlocks:["Woodcutting knowledge"], prepare:["Travel to the The Wilds","Chop wood — it costs 5 energy each time"] });
   G.addQuest({ id:"q_forge", type:"side", name:"First Forging", desc:"Craft any item at the Forge.", objective:{ type:"craft", target:"any", required:1 }, rewards:{ gold:50, xp:30 }, unlocks:["Crafting"], prepare:["Gather wood and leather first","Potions are the cheapest recipe"] });
   G.startChapter();
-  G.log(`You awaken in the Crimson Mire. The road ahead is yours to write.`);
-  G.log(`Tip: gather, hunt, and grow strong before facing the Coven.`);
+  G.log(`You awaken in the The Wilds. The road ahead is yours to write.`);
+  G.log(`Tip: gather, hunt, and grow strong before facing the Cult.`);
 };
 G.begin = function () {
   document.getElementById("start-screen").classList.add("hidden");
